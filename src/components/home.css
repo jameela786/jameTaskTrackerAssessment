@@ -1,0 +1,69 @@
+.HomeContainer{
+    background-color: aliceblue;
+    height: 100vh;
+  }
+  
+  .cardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+    border-radius: 8px;
+  }
+  
+  .header{
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .addBtn{
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: blue;
+    color: #ffffff;
+    margin-left: 15px;
+    border-width: 0px solid;
+  
+  }
+  
+  .input_Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input_field{
+      width: 300px;
+      height: 35px;
+      border-radius: 5px;
+  }
+
+  .taskDisplayContainer{
+      width: 500px;
+      height: auto;
+  }
+
+  .taskDisplay{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: skyblue;
+      margin-top: 10px;
+  }
+
+  .delete_btn{
+      border: 0px solid;
+      border-width:0px;
+      background:transparent
+  }
+
+  .markCompleted{
+    border: 0px solid;
+    border-width:0px;
+    background:transparent     
+  }
