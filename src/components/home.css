@@ -67,3 +67,8 @@
     border-width:0px;
     background:transparent     
   }
+
+  .markAsComplete{
+    text-decoration: line-through;
+    color: gray;
+  }

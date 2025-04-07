@@ -1,7 +1,7 @@
 // import { Component } from "react/cjs/react.production";
 import {Component} from 'react'
 import { MdDelete } from "react-icons/md";
-import { IoMdCloseCircle } from "react-icons/io";
+import { IoMdCloseCircle,IoMdCheckmarkCircle } from "react-icons/io";
 import './home.css'
 // import uuidv4 from 'uuid';
 class Home extends Component{
@@ -24,16 +24,13 @@ class Home extends Component{
     }
 
     ontaskCompletion = (id)=>{
-        // const {taskList} = this.state
-        // let taskUpdated = taskList.find((eachItem)=>
-        //     (eachItem.id===id) ? !eachItem.taskStatus : eachItem
-        // )        
+        const {taskList} = this.state
+        let taskUpdated = taskList.map((eachItem)=>
+            (eachItem.id===id) ? {...eachItem,taskStatus:!eachItem.taskStatus} : eachItem
+        )        
     
 
-        // taskUpdated = !taskUpdated.taskStatus
-        // console.log("task updated = ",UpdatedtaskList)
-        console.log("task completion")
-        // this.setState((prevState)=>({taskList:UpdatedtaskList }))
+        this.setState({taskList:taskUpdated})
     }
 
     onDeleteTask = (id) =>{
@@ -62,10 +59,10 @@ class Home extends Component{
                                 <div className='taskDisplay' key={eachItem.id}>
                                     
                                     <button className='markCompleted' onClick={()=>this.ontaskCompletion(eachItem.id)}>
-                                        <IoMdCloseCircle size={24} color='grey'/>
+                                        { eachItem.taskStatus ? <IoMdCheckmarkCircle size={24} color='green'/> : <IoMdCloseCircle size={24} color='grey'/>}
                                     </button>
                                     
-                                    <p>{eachItem.task}</p>
+                                    <p className={eachItem.taskStatus ? 'markAsComplete' : ''}>{eachItem.task}</p>
                                     <button className="delete_btn" onClick={()=>{this.onDeleteTask(eachItem.id)}}>
                                         <MdDelete size={24} color='purple'/>
                                     </button>
